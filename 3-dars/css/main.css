@@ -12,19 +12,166 @@
     margin: 0px auto;
 }
 
+/* HEADER */
 .header__block{
     width: 100%;
     display: flex;
     justify-content: center;
     justify-content: space-between;
     align-items: center;
+    padding-top: 135px;
+    padding-bottom: 84px;
 }
 
 .header__list{
     display: flex;
     gap: 24px;
+    color: #1f1534;
 }
 .header__img{
     display: flex;
     align-items: center;
+}
+
+/* WORK */
+.work__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 108px;
+    padding-bottom: 169px;
+}
+
+.work__title{
+    width: 445px;
+    padding-bottom: 25px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 117%;
+    color: #000;
+}
+
+.work__text{
+    width: 445px;
+    padding-bottom: 25px;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 152%;
+    color: #7d7987;
+}
+
+.work__btn{
+    width: 200px;
+    height: 56px;
+    font-size: 18px;
+    border-radius: 50px;
+    line-height: 111%;
+    color: #458ff6;
+    background-color: #fff;
+}
+
+/* OUR SERVICE */
+
+.our_service__title{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 156%;
+    color: #000;
+    padding-left: 45%;
+}
+
+.our_service__text{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 167%;
+    text-align: center;
+    color: #7d7987;
+    padding-bottom: 78px;
+}
+
+
+.our_service__box2{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 166px;
+}
+
+/* .our_service__box2--btn{
+    padding-bottom: 166px;
+    border-radius: 55px;
+stroke-width: 1.40px;
+stroke: #458ff6;
+font-weight: 700;
+font-size: 18px;
+line-height: 111%;
+color: #458ff6; */
+/* } */
+
+.healthcare__block{
+    display: flex;
+    /* align-items: center; */
+    gap: 135px;
+    padding-bottom: 150px;
+}
+
+
+
+/* HEALTCARE */
+.healthcare__box1--title{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 156%;
+    color: #000;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+
+.healthcare__box1--text{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 167%;
+    color: #7d7987;
+    padding-bottom: 40px;
+}
+
+
+/* CUSTOMER */
+.customer__block{
+    width: 1300px;
+    background-color: #458ff6;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.customer__title{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 133%;
+    color: #fff;
+    padding-bottom: 50px;
+    padding-left: 30%;
+    padding-top: 30px;
+}
+.somthing{
+    display: flex;
+    gap: 111px;
+}
+.customer__box1{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.customer__text{
+    font-size: 20px;
+    color: #fff;
+}
+
+.customer__text2{
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 158%;
+    color: rgba(255, 255, 255, 0.9);
 }
