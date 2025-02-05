@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.container{
+    display: flex;
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.header__block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__list{
+    display: flex;
+    gap: 24px;
+}
+.header__img{
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,22 @@
+.about{
+    width: 100%;
+}
+
+.about__block{
+    display: flex;
+    gap: 185px;
+
+}
+
+.about__title{
+    width: 136px;
+    padding: 5px;
+    font-size: 25px;
+    font-weight: 500;
+}
+.about__sub-title{
+    width: 496px;
+    padding: 20px;
+    font-size: 49px;
+    font-weight: 700;
+}
