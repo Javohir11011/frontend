@@ -1,0 +1,105 @@
+.about{
+    padding-top: 100px;
+    background: #012f34;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: start;
+    padding-bottom: 197px;
+    background-repeat: no-repeat;
+    background-image: url(../../img/logo4.svg);
+    background-position: right top;
+}
+
+.about__title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    color: #fff;
+    max-width: 240px;
+    padding-bottom: 56px;
+
+}
+
+.about__text{
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 167%;
+    text-align: center;
+    color: #fff;
+    max-width: 327px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.about__img{
+    padding-bottom: 16px;
+}
+.about__info-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 156%;
+    text-align: center;
+    color: #f67e7e;
+}
+
+.about__info{
+    text-align: center;
+    padding-bottom: 68px;
+    gap: 23px;
+
+}
+
+
+@media screen and (min-width: 768px) {
+    .about__title{
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 100%;
+        color: #fff;
+        max-width: 445px;
+        padding-bottom: 68px;
+        text-align: start;
+    }
+    .about__text{
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 167%;
+        color: #fff;
+        max-width: 478px;
+    }
+    .about__info{
+        display: flex;
+        padding-bottom: 32px;
+    }
+    .about__block{
+        text-align: center;
+        padding-top: 60px;
+        max-width: 573px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .about__info-title{
+        font-size: 18px;
+        line-height: 156%;
+        text-align: start;
+        padding-bottom: 16px;
+    }
+    .about__text{
+        font-size: 15px;
+        line-height: 167%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .about__block{
+        display: flex;
+        max-width: 1110px;
+        gap: 125px;
+    }
+    .about__title{
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 100%;
+        color: #fff;
+    }
+}
