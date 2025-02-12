@@ -1,0 +1,27 @@
+*{
+    padding-left: auto;
+    padding-right: auto;
+}
+
+
+ul,
+ol{
+    list-style: none;
+}
+
+/* .input{
+
+} */
+
+.block{
+    padding-top: 100px;
+}
+
+.modal{
+    display:  block;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    font-size: 50px;
+    
+}
