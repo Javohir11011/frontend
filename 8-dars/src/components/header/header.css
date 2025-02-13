@@ -1,0 +1,32 @@
+.header__block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 219px;
+    padding-top: 64px;
+    padding-bottom: 120px;
+}
+
+.header__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+
+.header__item{
+    font-weight: 500;
+    font-size: 13px;
+    color: #242d52;
+}
+.header__btn{
+    width: 137px;
+    height: 44px;
+    font-weight: 700;
+    font-size: 13px;
+    color: #fcf6f5;
+    background: #c42b0c;
+    border-radius: 50px;
+    border: #c42b0c;
+}
