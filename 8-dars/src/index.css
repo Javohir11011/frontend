@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li{
+  list-style: none;
+}
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.hero__block{
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.hero__title{
+  max-width: 445px;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  color: #242d52;
+  padding-bottom: 34px;
+}
+
+.hero__text{
+  max-width: 350px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 162%;
+  color: #242d52;
+  padding-bottom: 40px;
+}
+
+.hero__box2{
+  max-width: 540px;
+}
+
+
