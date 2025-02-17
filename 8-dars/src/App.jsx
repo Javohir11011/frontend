@@ -1,6 +1,7 @@
-import { Header } from './components/header/header'
-import box2Img from './assets/box2__iimg.svg'
-import { About } from './components/about/about'
+import { Header } from './components/header/header';
+import box2Img from './assets/box2__iimg.svg';
+import { About } from './components/about/about';
+import { Worker } from './components/worker/worker';
 function App() {
 
   return (
@@ -27,9 +28,9 @@ function App() {
         </div>
       </div>
     </section>
-    <section className='service'>
+    <section className='about'>
     <div className="container">
-      <div className="service__block">
+      <div className="about__block">
         <div className='service__box1'>
         <h2 className='service__title'>
         What’s different about Manage?
@@ -38,6 +39,7 @@ function App() {
         Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams. 
         </p>
         </div>
+        <div className='service__box2'>
         <About 
       number={"01"}
       title={"Track company-wide progress"}
@@ -57,9 +59,40 @@ function App() {
       text={
         "Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution."      }
       /> 
+        </div>
       </div>
     </div>
     </section>
+    <section className='worker'>
+      <div className="container">
+        <div className="worker__block">
+              <h2 className='worker__title'>
+                What they’ve said
+            </h2>
+            <divc className="worker__box22">
+            <Worker title={"Anisha Li"}
+            text = {"  “Manage has supercharged our team’s workflow. The ability to maintain visibility on larger milestones at all times keeps everyone motivated.”"}
+            />
+            <Worker title={"Anisha Li"}
+            text = {"  “Manage has supercharged our team’s workflow. The ability to maintain visibility on larger milestones at all times keeps everyone motivated.”"}
+            />
+            </divc>
+            <button className='worker__btn'>Get Started</button>
+        </div>
+      </div>
+    </section>
+    {/* <section className='somthing'>
+      <div className="container">
+        <div className="somthing">
+          <h2 className='somthing__title'>
+          Simplify how your team works today.
+          </h2>
+          <button className='somthing__btn'>
+          Get Started
+          </button>
+        </div>
+      </div>
+    </section> */}
     </>
     
   )
