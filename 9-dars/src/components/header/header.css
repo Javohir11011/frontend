@@ -1,0 +1,30 @@
+.header__block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.header__form{
+    width: 739px;
+}
+
+.header__input{
+    width: 555px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+.header__box2{
+    display: flex;
+}
+/* background */
+
+
+.header__btn{
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+

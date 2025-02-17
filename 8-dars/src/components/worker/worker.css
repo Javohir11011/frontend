@@ -1,0 +1,29 @@
+.worker__title2{
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #242d52;
+    padding-bottom: 19px;
+}
+
+.worker__text{
+    max-width: 460px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 162%;
+    text-align: center;
+    color: #242d52;
+    opacity: 0.5;
+    padding-bottom: 40px;
+
+}
+
+.worker__block{
+    display: block;
+    justify-content: space-between;
+    align-items: normal;
+    gap: 100px;
+    width: 1110px;
+    height: 256px;
+}

@@ -1,0 +1,36 @@
+.about__blockk{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 28px;
+    padding-bottom: 40px;
+}
+
+.about__title{
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: #242d52;
+    padding-bottom: 19px;
+}
+.about__text{
+    max-width: 445px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 162%;
+    color: #242d52;
+}
+
+.about__btn{
+    max-width: 67px;
+    border-radius: 39px;
+    width: 67px;
+    height: 39px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #fff;
+    background: #f3603c;
+    border-color: #f3603c;
+}
