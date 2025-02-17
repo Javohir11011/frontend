@@ -24,6 +24,7 @@ function App() {
                                 <div className="flex ml-[61px] pr-[72px] ">
                                     {heroCards.map((item) => (
                                         <HeroCard
+                                        
                                             key={item.id}
                                             id={item.id}
                                             img={item.img}
