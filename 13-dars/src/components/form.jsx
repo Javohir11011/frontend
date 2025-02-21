@@ -33,7 +33,7 @@ export const Form = ({ defValue }) => {
       });
     } else {
       dispatch({
-        type: todoAction.EDIT_TODO,
+        type: todoAction.EDIcT_TODO,
         value: { ...data, id: defValue.id },
       });
     }
@@ -68,7 +68,7 @@ export const Form = ({ defValue }) => {
             <p className="text-[12px] text-red-500">{errors.des.message}</p>
           )}
         </div>
-        <button className="bg-green-400 cursor-pointer" type="submit">
+        <button className="bg-blue-500 cursor-pointer" type="submit">
           send
         </button>
       </form>

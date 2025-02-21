@@ -1,6 +1,7 @@
 export const todoAction = {
   CREATE_TODO: "ADD_TODO",
   EDIT_TODO: "EDIT_TODO",
+  DELETE_TODO: "DELETE_TODO",
 };
 
 export const todoReducer = (state, action) => {
@@ -8,10 +9,15 @@ export const todoReducer = (state, action) => {
     case todoAction.CREATE_TODO:
       return { ...state, todoList: [...state.todoList, action.value] };
     case todoAction.EDIT_TODO:
-      const newArr = state.todoList.map((item) =>
+      const newArr =  state.todoList.map((item) =>
         item.id === action.value.id ? action.value : item
       );
       return { ...state, todoList: newArr };
+    case todoAction.DELETE_TODO:
+      return {
+        ...state,
+        todoList: state.todoList.filter((item) => item.id !== action.value.id),
+      };
     default:
       return state;
   }
