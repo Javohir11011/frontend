@@ -1,13 +1,15 @@
-import { useState } from "react";
-import { MainLayout } from "./layout/main.layout";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/home/home";
+import React from "react";
+import { MainLayout } from "./layout/main-layout";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <MainLayout></MainLayout>
-    </>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
 
