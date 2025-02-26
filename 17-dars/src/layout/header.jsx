@@ -1,30 +1,19 @@
 import React from "react";
-import logo1 from "../assets/header/logo1.svg";
-import logo2 from "../assets/header/logo2.svg";
-import logo3 from "../assets/header/logo3.svg";
+import { Search } from "./components/search";
 
 export const Header = () => {
-  return (
-    <div className="container">
-      <div className="flex gap-[40px] justify-between items-center pt-[24px]">
-        <img src={logo1} alt="img" />
-        <ul className="flex text-[16px] gap-[24px]">
-          <li>Shop</li>
-          <li>On Sale</li>
-          <li>New Arrivals</li>
-          <li>Brands</li>
-        </ul>
-        <input
-          type="text"
-          placeholder="Search for product"
-          className="p-[13px] w-[577px]"
-        />
-        <div className="flex gap-[24px]">
-          <img src={logo2} alt="img" />
-          <img src={logo3} alt="img" />
+    return (
+        <div>
+            <div className="bg-primary p-[10px] text-center">
+                <p className="text-white text-[14px]">
+                    Sign up and get 20% off to your first order. Sign Up Now
+                </p>
+            </div>
+            <div className="container flex gap-[40px] py-[24px]">
+                <div className="grow">
+                    <Search />
+                </div>
+            </div>
         </div>
-      </div>
-      <div className="header__block2"></div>
-    </div>
-  );
+    );
 };
