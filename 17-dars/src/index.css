@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+ul,
+li {
+  list-style: none;
+}
+
+.container {
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
