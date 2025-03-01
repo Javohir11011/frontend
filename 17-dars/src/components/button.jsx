@@ -11,6 +11,12 @@ export const Button = ({ children, type, className, variant, ...props }) => {
             variant === "two",
           "bg-white py-[12px] px-[88.5px] font-medium text-primary":
             variant === "three",
+          "bg-white py-[15px] px-[45px] text-primary border border-gray":
+            variant === "four",
+          "bg-black py-[15px] px-[29px] text-primary border border-gray":
+            variant === "five",
+          "bg-white py-[15px] px-[29px] text-primary border border-gray":
+            variant === "six",
         },
         className
       )}
