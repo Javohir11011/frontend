@@ -11,7 +11,7 @@ import raitingImg2 from "../assets/home/rating2.svg";
 import raitingImg3 from "../assets/home/rating3.svg";
 import raitingImg4 from "../assets/home/rating4.svg";
 import raitingImg5 from "../assets/home/rating5.svg";
-export const newArrivals = [
+export const products = [
     {
         id: 1,
         name: "T-shirt with Tape Details",
