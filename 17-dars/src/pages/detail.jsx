@@ -11,7 +11,7 @@ import line from "../assets/details/line.svg";
 import img1 from "../assets/details/setting.svg";
 import { WorkerCard } from "../layout/components/worker-card";
 import { Button } from "../components/button";
-import { topProducts } from "../data/products";
+import { topProducts } from "../data/top-pro";
 import { ProductCard } from "../layout/components/product-card";
 export const Detail = () => {
   return (
@@ -92,7 +92,7 @@ export const Detail = () => {
             <div className="flex gap-[10px] pb-[64px]">
               <img src={img1} alt="img" />
               <Button variant={"six"}>Latest</Button>
-              <Button variant={"five"} className={"text-white pl-[50%]"}>
+              <Button variant={"five"} className={"text-white"}>
                 Write a Review
               </Button>
             </div>
@@ -131,7 +131,7 @@ export const Detail = () => {
                     id={item.id}
                     img={item.img}
                     name={item.name}
-                    rating={item.rating}
+                    rate={item.rating}
                     price={item.price}
                     old_price={item.old_price}
                     discount={item.discount}
