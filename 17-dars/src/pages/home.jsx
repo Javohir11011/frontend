@@ -14,6 +14,7 @@ import browseImg3 from "../assets/home/browse-dress/browse-img3.png";
 import browseImg4 from "../assets/home/browse-dress/browse-img4.png";
 import { ProductCard } from "../layout/components/product-card";
 import { CommentsCard } from "../layout/components/comments-card";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
@@ -88,16 +89,17 @@ export const Home = () => {
             <div className="grid grid-cols-4 gap-[20px]">
               {products.map((item) => {
                 return (
-                  <ProductCard
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                    old_price={item.old_price}
-                    discount={item.discount}
-                    img={item.img}
-                    rate={item.rating}
-                  />
+                  <Link to={`product/${item.id}`} key={item.id}>
+                    <ProductCard
+                      id={item.id}
+                      name={item.name}
+                      price={item.price}
+                      old_price={item.old_price}
+                      discount={item.discount}
+                      img={item.img}
+                      rate={item.rating}
+                    />
+                  </Link>
                 );
               })}
             </div>
