@@ -28,14 +28,11 @@ export const TodoCart = ({ id, title, price }: todoT) => {
     const title = prompt("edit to title...");
     const price = prompt("edit to price...");
     const newData = { title, price };
-    mutate1(
-      { id, newData },
-      {
-        onSuccess: () => {
-          client.invalidateQueries({ queryKey: ["todo_list"] });
-        },
-      }
-    );
+    mutate1(id, {
+      onSuccess: () => {
+        client.invalidateQueries({ queryKey: ["todo_list"] });
+      },
+    });
   };
   return (
     <div>
