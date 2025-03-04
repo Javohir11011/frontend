@@ -8,8 +8,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<Detail />}></Route>
-        <Route path="/" element={<Detail />}></Route>
+        <Route index element={<Home />} />
+        <Route path="/product/:id" element={<Detail />} />
       </Route>
     </Routes>
   );

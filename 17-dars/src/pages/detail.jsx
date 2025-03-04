@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import short1 from "../assets/details/short.svg";
 import short2 from "../assets/details/short2.svg";
 import short3 from "../assets/details/short3.svg";
@@ -11,9 +11,22 @@ import line from "../assets/details/line.svg";
 import img1 from "../assets/details/setting.svg";
 import { WorkerCard } from "../layout/components/worker-card";
 import { Button } from "../components/button";
-import { topProducts } from "../data/products";
+import { topProducts } from "../data/top-pro";
 import { ProductCard } from "../layout/components/product-card";
+import { useParams } from "react-router-dom";
 export const Detail = () => {
+  const { id } = useParams();
+  useEffect(() => {
+    window.scrollTo({
+      top: 100,
+    });
+  }, [id]);
+
+
+
+  const onChange = () =>{
+    console.log("res");
+  }
   return (
     <>
       <section>
@@ -66,8 +79,11 @@ export const Detail = () => {
                   </button>
                 </div>
                 <div className="pt-[48px]">
-                  <button className="w-[170px] bg-amber-50 h-[40px]  rounded-[62px]">
-                    - 1 +
+                  <button className="w-[170px] bg-amber-50 h-[40px]  rounded-[62px]" onClick={onChange}>
+                    <label className="">-</label>
+                   1
+                   <label className="">+</label>
+
                   </button>
                   <button className="w-[400px] bg-black rounded-[62px] text-[12px] text-white h-[40px]">
                     Add to Cart
@@ -92,7 +108,7 @@ export const Detail = () => {
             <div className="flex gap-[10px] pb-[64px]">
               <img src={img1} alt="img" />
               <Button variant={"six"}>Latest</Button>
-              <Button variant={"five"} className={"text-white pl-[50%]"}>
+              <Button variant={"five"} className={"text-white"}>
                 Write a Review
               </Button>
             </div>
@@ -131,7 +147,7 @@ export const Detail = () => {
                     id={item.id}
                     img={item.img}
                     name={item.name}
-                    rating={item.rating}
+                    rate={item.rating}
                     price={item.price}
                     old_price={item.old_price}
                     discount={item.discount}
