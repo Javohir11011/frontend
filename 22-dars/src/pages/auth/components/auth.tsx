@@ -15,7 +15,7 @@ export const Auth = () => {
   const onFinish: FormProps<AuthType>["onFinish"] = (values) => {
     mutate(values, {
       onSuccess: () => {
-        navigate("/home");
+        navigate("/");
       },
       onError: (err: any) => {
         setErrorMsg(err.response.data.error.message);
@@ -44,7 +44,7 @@ export const Auth = () => {
           autoComplete="off"
         >
           <Form.Item
-            name="username"
+            name="login"
             style={{ width: "100%" }}
             rules={[{ required: true, message: "Please input your username!" }]}
           >

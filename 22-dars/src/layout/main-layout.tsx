@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import Cookies from "js-cookie";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
+  HomeFilled,
+  UserAddOutlined,
+  UsergroupAddOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
-import { Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
 
 const { Header, Sider, Content } = Layout;
 
@@ -16,7 +18,10 @@ export const MainLayout: React.FC = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
-
+  const token = Cookies.get("user_token");
+  if (!token) {
+    return <Navigate to={"/login"} />;
+  }
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -29,18 +34,23 @@ export const MainLayout: React.FC = () => {
           items={[
             {
               key: "1",
-              icon: <UserOutlined />,
-              label: "nav 1",
+              icon: <HomeFilled />,
+              label: <Link to={"/"}>Home</Link>,
             },
             {
               key: "2",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
+              icon: <UsergroupAddOutlined />,
+              label: "mijozlar",
             },
             {
               key: "3",
+              icon: <UserAddOutlined />,
+              label: <Link to={"/create"}>Mijoz qoshish</Link>,
+            },
+            {
+              key: "4",
               icon: <UploadOutlined />,
-              label: "nav 3",
+              label: "sozlamalar",
             },
           ]}
         />
