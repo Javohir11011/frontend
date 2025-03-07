@@ -3,6 +3,7 @@ import { Auth } from "./pages/auth/components/auth";
 import { Home } from "./pages/home/components/home";
 import { Debtor } from "./pages/debtor/components/debtor";
 import { MainLayout } from "./layout/main-layout";
+import { CreateDebtor } from "./pages/debtorCreate/create-debtor";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
         <Route path="/login" element={<Auth />} />
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
+          <Route path="/debtor" element={<Debtor />} />
+          <Route path="/create" element={<CreateDebtor />} />
         </Route>
-        <Route path="/debtor" element={<Debtor />} />
       </Routes>
     </>
   );
