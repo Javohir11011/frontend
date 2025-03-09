@@ -15,7 +15,7 @@ export const Home = () => {
 
   const navigate = useNavigate();
   const sumbit = () => {
-    navigate("/debtor");
+    navigate("/calendar");
   };
   const [state, setStar] = useState(true);
 

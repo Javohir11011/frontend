@@ -40,7 +40,7 @@ export const MainLayout: React.FC = () => {
             {
               key: "2",
               icon: <UsergroupAddOutlined />,
-              label: "mijozlar",
+              label: <Link to={"/mijozlar"}>mijozlar</Link>,
             },
             {
               key: "3",
