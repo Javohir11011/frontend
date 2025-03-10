@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Table, Spin } from "antd";
 import type { TableProps } from "antd";
 import { useGetAllDebtor } from "../service/query/useGetAllDebtor";
 import addDebt from "../../../assets/home/debtor-create.svg";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+// import { useSearchDebtor } from "../service/query/useSearchDebtors";
 
 interface DataType {
   key: string;
@@ -30,6 +31,11 @@ const columns: TableProps<DataType>["columns"] = [
     key: "description",
   },
   {
+    title: "Phone Number",
+    dataIndex: "phone",
+    key: "phone",
+  },
+  {
     title: "Like",
     dataIndex: "like",
     key: "like",
@@ -39,13 +45,20 @@ const columns: TableProps<DataType>["columns"] = [
 
 export const GetAllDebtor: React.FC = () => {
   const { data } = useGetAllDebtor();
+  // const [searchD, setSearchD] = useState("");
+  // const { search } = useSearchDebtor(searchD);
+  // console.log(search);
 
+  // const searchDebtor = (e) => {
+  //   setSearchD(e.target.value);
+  // };
   const formattedData: DataType[] = Array.isArray(data)
     ? data.map((item) => ({
         key: item.id,
         name: item.full_name,
         address: item.address,
         description: item.description,
+        phone: item.phoneNumbers?.map((item) => item.phone_number + ""),
         like: item.is_liked ?? false,
       }))
     : [];
@@ -61,7 +74,7 @@ export const GetAllDebtor: React.FC = () => {
           borderRadius: "12px",
         }}
         placeholder="Mijozlarni qidirish..."
-        // onClick={}
+        // onChange={(e) => searchDebtor(e)}
       />
       <Table<DataType> columns={columns} dataSource={formattedData} />
       <Link to={"/create"}>

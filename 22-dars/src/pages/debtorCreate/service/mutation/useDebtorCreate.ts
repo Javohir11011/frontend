@@ -6,14 +6,13 @@ export interface DebtorType {
   address: string;
   description: string;
   phone: string;
-  image: File | null;
+  img: File;
 }
 
 export const useDebtorCreate = () => {
   return useMutation({
     mutationFn: async (data: DebtorType) => {
-
-      const { full_name, address, description, image } = data;
+      const { full_name, address, description, img } = data;
       const debtorResponse = await request.post("/debtor/create", {
         full_name,
         address,
@@ -25,10 +24,9 @@ export const useDebtorCreate = () => {
         debtor_id: debtorId,
         phone_numbers: [phone],
       });
-      await request.post(`/debtor-images/upload/${debtorId}`);
-      if (image) {
+      if (img) {
         const formData = new FormData();
-        formData.append("file", image);
+        formData.append("file", img?.file);
 
         await request.post(`/debtor-images/upload/${debtorId}`, formData, {
           headers: {
