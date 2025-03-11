@@ -17,7 +17,7 @@ function App() {
           <Route path="/calendar" element={<CalendarDebtor />} />
           <Route path="/create" element={<CreateDebtor />} />
           <Route path="/mijozlar" element={<GetAllDebtor />} />
-          <Route path="/create-debt" element={<Debt />} />
+          <Route path="/create-debt/:id" element={<Debt />} />
         </Route>
       </Routes>
     </>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, DatePicker, Form, Input, Radio, Select, Upload } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import { useDebtorCreate } from "../debtorCreate/service/mutation/useDebtorCreate";
+import { useParams } from "react-router-dom";
 
 type SizeType = Parameters<typeof Form>[0]["size"];
 
@@ -9,6 +11,13 @@ export const Debt: React.FC = () => {
     "default"
   );
 
+  const { id } = useParams();
+
+  const { mutate } = useDebtorCreate();
+
+  
+
+  const sumbit = () => {};
   const onFormLayoutChange = ({ size }: { size: SizeType }) => {
     setComponentSize(size);
   };
@@ -30,9 +39,7 @@ export const Debt: React.FC = () => {
           <Radio.Button value="large">Large</Radio.Button>
         </Radio.Group>
       </Form.Item>
-      <Form.Item label="Full Name">
-        <Input placeholder="Ismingizni kiriting..." />
-      </Form.Item>
+
       <Form.Item label="Sana">
         <DatePicker />
       </Form.Item>
