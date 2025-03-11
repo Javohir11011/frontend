@@ -8,6 +8,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 
 interface DataType {
   key: string;
+  id: string;
   name: string;
   address: string;
   description: string;
@@ -19,6 +20,10 @@ const columns: TableProps<DataType>["columns"] = [
     title: "Full Name",
     dataIndex: "name",
     key: "name",
+
+    render: (full_name, record) => {
+      return <Link to={`/create-debt/${record.id}`}>{full_name}</Link>;
+    },
   },
   {
     title: "Address",
@@ -44,17 +49,13 @@ const columns: TableProps<DataType>["columns"] = [
 ];
 
 export const GetAllDebtor: React.FC = () => {
+  const navigate = useNavigate();
+  const sumbit = () => {};
   const { data } = useGetAllDebtor();
-  // const [searchD, setSearchD] = useState("");
-  // const { search } = useSearchDebtor(searchD);
-  // console.log(search);
-
-  // const searchDebtor = (e) => {
-  //   setSearchD(e.target.value);
-  // };
   const formattedData: DataType[] = Array.isArray(data)
     ? data.map((item) => ({
         key: item.id,
+        id: item.id,
         name: item.full_name,
         address: item.address,
         description: item.description,
@@ -74,7 +75,6 @@ export const GetAllDebtor: React.FC = () => {
           borderRadius: "12px",
         }}
         placeholder="Mijozlarni qidirish..."
-        // onChange={(e) => searchDebtor(e)}
       />
       <Table<DataType> columns={columns} dataSource={formattedData} />
       <Link to={"/create"}>
