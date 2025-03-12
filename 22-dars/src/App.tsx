@@ -6,6 +6,7 @@ import { CreateDebtor } from "./pages/debtorCreate/create-debtor";
 import { CalendarDebtor } from "./pages/calendar/calendar";
 import { GetAllDebtor } from "./pages/debtorCreate/components/getAllDebtor";
 import { Debt } from "./pages/debts/debt";
+import { EditDebtor } from "./pages/debtorCreate/components/editDebtorById";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/create" element={<CreateDebtor />} />
           <Route path="/mijozlar" element={<GetAllDebtor />} />
           <Route path="/create-debt/:id" element={<Debt />} />
+          <Route path="/edit-debtor/:id" element={<EditDebtor />} />
         </Route>
       </Routes>
     </>
