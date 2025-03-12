@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Table, Spin } from "antd";
+import React from "react";
+import { Table, Button, Popconfirm } from "antd";
 import type { TableProps } from "antd";
 import { useGetAllDebtor } from "../service/query/useGetAllDebtor";
+import { useDeleteDebtor } from "../service/mutation/useDeleteDebtor";
 import addDebt from "../../../assets/home/debtor-create.svg";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-// import { useSearchDebtor } from "../service/query/useSearchDebtors";
+import { Link, useNavigate } from "react-router-dom";
 
 interface DataType {
   key: string;
@@ -12,46 +12,15 @@ interface DataType {
   name: string;
   address: string;
   description: string;
+  phone: string;
   like: boolean;
 }
 
-const columns: TableProps<DataType>["columns"] = [
-  {
-    title: "Full Name",
-    dataIndex: "name",
-    key: "name",
-
-    render: (full_name, record) => {
-      return <Link to={`/create-debt/${record.id}`}>{full_name}</Link>;
-    },
-  },
-  {
-    title: "Address",
-    dataIndex: "address",
-    key: "address",
-  },
-  {
-    title: "Description",
-    dataIndex: "description",
-    key: "description",
-  },
-  {
-    title: "Phone Number",
-    dataIndex: "phone",
-    key: "phone",
-  },
-  {
-    title: "Like",
-    dataIndex: "like",
-    key: "like",
-    render: (like: boolean) => (like ? "✅" : "❌"),
-  },
-];
-
 export const GetAllDebtor: React.FC = () => {
   const navigate = useNavigate();
-  const sumbit = () => {};
   const { data } = useGetAllDebtor();
+  const { mutate: deleteDebtor } = useDeleteDebtor();
+
   const formattedData: DataType[] = Array.isArray(data)
     ? data.map((item) => ({
         key: item.id,
@@ -59,10 +28,67 @@ export const GetAllDebtor: React.FC = () => {
         name: item.full_name,
         address: item.address,
         description: item.description,
-        phone: item.phoneNumbers?.map((item) => item.phone_number + ""),
+        phone: item.phoneNumbers?.map((p) => p.phone_number).join(", ") || "",
         like: item.is_liked ?? false,
       }))
     : [];
+
+  const columns: TableProps<DataType>["columns"] = [
+    {
+      title: "Full Name",
+      dataIndex: "name",
+      key: "name",
+      render: (full_name, record) => (
+        <Link to={`/create-debt/${record.id}`}>{full_name}</Link>
+      ),
+    },
+    {
+      title: "Address",
+      dataIndex: "address",
+      key: "address",
+    },
+    {
+      title: "Description",
+      dataIndex: "description",
+      key: "description",
+    },
+    {
+      title: "Phone Number",
+      dataIndex: "phone",
+      key: "phone",
+    },
+    {
+      title: "Like",
+      dataIndex: "like",
+      key: "like",
+      render: (like: boolean) => (like ? "✅" : "❌"),
+    },
+    {
+      title: "Amallar",
+      key: "actions",
+      render: (_, record) => (
+        <>
+          <Button
+            type="primary"
+            style={{ marginRight: 8 }}
+            onClick={() => navigate(`/edit-debtor/${record.id}`)}
+          >
+            Update
+          </Button>
+          <Popconfirm
+            title="Rostdan ham o‘chirmoqchimisiz?"
+            onConfirm={() => deleteDebtor(record.id)}
+            okText="Ha"
+            cancelText="Yo‘q"
+          >
+            <Button type="default" danger>
+              Delete
+            </Button>
+          </Popconfirm>
+        </>
+      ),
+    },
+  ];
 
   return (
     <div style={{ position: "relative" }}>
@@ -87,7 +113,6 @@ export const GetAllDebtor: React.FC = () => {
             right: "10px",
             width: "150px",
             height: "100px",
-            cursor: "pointer",
           }}
         />
       </Link>

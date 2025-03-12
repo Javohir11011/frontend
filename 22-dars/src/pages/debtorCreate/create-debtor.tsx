@@ -109,7 +109,7 @@ export const CreateDebtor: React.FC = () => {
           <Input />
         </Form.Item>
 
-        <Form.Item name="description" label="Elatma">
+        <Form.Item name="description" label="Eslatma">
           <Input />
         </Form.Item>
 
