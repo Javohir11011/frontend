@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <div className="">
       <div className="container flex gap-[30px]">
-        <div className="w-[280px] min-h-screen bg-white-400 pb-[17px]">
+        <div className="w-[280px] min-h-screen bg-white-400 gap-[10px]">
           {PaymentData.map((item) => (
-            <Payment key={item.id} text={item.name} img={item.img} />
+            <Payment key={item.id} text={item.name} img={item.img.src} />
           ))}
         </div>
         <div className="pt-[38px] flex-1 bg-gray-200 pr-[10px] pl-[10px]">
@@ -38,7 +38,7 @@ export default function Home() {
               <img src={newLogo.src} alt="img" />
               <h2 className="text-[32px]">Yangi</h2>
             </div>
-            <div className="grid grid-cols-4 ">
+            <div className="grid grid-cols-4 gap-[12px]">
               {CardProduct.map((item) => (
                 <Product
                   key={item.id}
