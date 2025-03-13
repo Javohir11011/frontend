@@ -10,8 +10,8 @@ interface Product {
 }
 const Product = ({ productImg, info, price, skindka, logo, add }: Product) => {
   return (
-    <div className=" bg-white w-[264px] pb-[21px] pl-[10px] pr-[10px]">
-      <img src={productImg} alt="img" className="pl-[1px] pr-[1px]" />
+    <div className=" bg-white w-[264px] pb-[21px] pl-[10px] pr-[10px] rounded-[7px] ">
+      <img src={productImg} alt="img" className="pl-[1px] pr-[1px] " />
       <p className="pb-[13px] ">{info}</p>
       <div className="flex gap-[12px] pb-[16px]">
         <p>{price}</p>
