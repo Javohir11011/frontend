@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CardProduct, PaymentData } from "@/config/payment";
 import Payment from "./_components/payment";
 import phone from "../assets/phone.svg";
