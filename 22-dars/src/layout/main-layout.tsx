@@ -50,7 +50,7 @@ export const MainLayout: React.FC = () => {
             {
               key: "4",
               icon: <UploadOutlined />,
-              label: "sozlamalar",
+              label: <Link to={"/setting"}>Sozlamalar</Link>,
             },
           ]}
         />
