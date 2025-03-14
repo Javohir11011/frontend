@@ -21,7 +21,6 @@ export const useEditDebtor = () => {
       });
 
       await request.patch(`/phone-numbers/${id}`, {
-        debtor_id: id,
         phone_numbers: [data.phone],
       });
     },

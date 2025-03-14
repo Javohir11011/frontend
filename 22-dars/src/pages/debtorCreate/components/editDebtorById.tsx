@@ -63,7 +63,8 @@ export const EditDebtor: React.FC = () => {
       </Form>
 
       <img
-        src="https://t4.ftcdn.net/jpg/05/31/37/89/360_F_531378938_xwRjN9e5ramdPj2coDwHrwk9QHckVa5Y.jpg"
+        style={{ borderRadius: "30px" }}
+        src="https://st4.depositphotos.com/14431644/21993/i/450/depositphotos_219939730-stock-illustration-handwriting-text-update-concept-meaning.jpg"
         alt="img"
       />
     </div>
