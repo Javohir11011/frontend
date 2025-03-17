@@ -11,6 +11,7 @@ export default async function Home() {
         {users.map((item) => (
           <UserCard
             key={item.id}
+            id={item.id}
             title={item.title}
             description={item.description}
           />
