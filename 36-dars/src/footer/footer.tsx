@@ -10,6 +10,7 @@ import insta from "../app/assets/footer/insta.svg";
 import link from "../app/assets/footer/link.svg";
 import twi from "../app/assets/footer/twi.svg";
 import you from "../app/assets/footer/you-tube.svg";
+import logo7 from "../app/assets/footer/logo7.svg";
 
 export const Footer = () => {
   return (
@@ -18,6 +19,7 @@ export const Footer = () => {
         {footerData.map((item) => (
           <FooterCart
             key={item.id}
+            id={item.id}
             img={item.img}
             title={item.title}
             text={item.text}
@@ -87,7 +89,7 @@ export const Footer = () => {
         </ul>
         <div>
           <h3 className="text-[18px] pb-[10px]">Social Media</h3>
-          <div className="flex gap-[10px]">
+          <div className="flex gap-[10px] pb-[33px]">
             <img
               src={face.src}
               alt="img"
@@ -113,6 +115,10 @@ export const Footer = () => {
               alt="img"
               className="p-[7px] border-green-500 bg-green-100 rounded-[10px]"
             />
+          </div>
+          <div>
+            <h3 className="text-[18px] pb-[13px]">We accept</h3>
+            <img src={logo7.src} alt="img" />
           </div>
         </div>
       </div>

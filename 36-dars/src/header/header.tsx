@@ -17,11 +17,12 @@ export const Header = () => {
           <li>Plant Care</li>
           <li>Blogs</li>
         </ul>
-        <div className="flex gap-[30px]">
+        <div className="flex items-center gap-[20px]">
           <img src={search.src} alt="img" />
           <img src={savat.src} alt="img" />
-          <div className="flex  bg-[#46a358] gap-[4px] rounded-[6px]">
-            <img src={login.src} alt="login" className="pl-[17px]" />
+          <div className="flex  bg-[#46a358] rounded-[6px] p-[10px]">
+            <img src={login.src} alt="login" className="pl-[2px]" />
+            <button className="text-[#fff]">Login</button>
           </div>
         </div>
       </div>
