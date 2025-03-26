@@ -1,11 +1,17 @@
+"use client";
+
 import { ProductData } from "@/data/product-data";
 import logo from "../app/assets/home/logo.svg";
 import ProductCart from "./_components/product-cart";
 import logo2 from "../app/assets/home/logo2.svg";
 import logo3 from "../app/assets/home/logo3.svg";
 import logo4 from "../app/assets/home/logo4.svg";
+import { GetCategoriesQuery } from "./service/getAllCategories";
 
 export default function Home() {
+  const { data, isLoading } = GetCategoriesQuery();
+  console.log(data);
+
   return (
     <div className="container">
       <div className="flex pt-[62px] pl-[25px] pr-[25px] gap-[123px] bg-[#fbfbfb] pb-[40px]">
@@ -30,28 +36,19 @@ export default function Home() {
         <div className="bg-[#fbfbfb] pl-[24px] pr-[18px]">
           <h3 className="text-[18px] text-[#3d3d3d] pt-[10px]">Categories</h3>
           <div className="flex justify-between">
-            <ul>
-              <li className="text-[15px] pt-[12px] pb-[12px]">House</li>
-              <li className="text-[15px] pb-[12px]">Potter Plants</li>
-              <li className="text-[15px] pb-[12px]">Seeds</li>
-              <li className="text-[15px] pb-[12px]">Small Plants</li>
-              <li className="text-[15px] pb-[12px]">Plants</li>
-              <li className="text-[15px] pb-[12px]">Big Plants</li>
-              <li className="text-[15px] pb-[12px]">Succulents</li>
-              <li className="text-[15px] pb-[12px]">Gardening</li>
-              <li className="text-[15px] pb-[12px]">Accessories</li>
-            </ul>
-            <ul>
-              <li className="text-[15px] pt-[12px] pb-[12px]">33</li>
-              <li className="text-[15px] pb-[12px]">12</li>
-              <li className="text-[15px] pb-[12px]">65</li>
-              <li className="text-[15px] pb-[12px]">39</li>
-              <li className="text-[15px] pb-[12px]">23</li>
-              <li className="text-[15px] pb-[12px]">17</li>
-              <li className="text-[15px] pb-[12px]">19</li>
-              <li className="text-[15px] pb-[12px]">13</li>
-              <li className="text-[15px] pb-[12px]">18</li>
-            </ul>
+            <div className="w-full pt-[20px]">
+              {isLoading
+                ? "Loading"
+                : data?.map((item) => (
+                    <li
+                      key={item.id}
+                      className="flex justify-between items-center"
+                    >
+                      <p className="pt-[10px] pb-[10px]">{item.name}</p>
+                      <span>{item.products.length}</span>
+                    </li>
+                  ))}
+            </div>
           </div>
           <h3 className="pb-[16px] pt-[15px] text-[18px]">Price Range</h3>
           <div>
@@ -86,7 +83,7 @@ export default function Home() {
             </div>
             <p>Short by: Default sorting</p>
           </div>
-          <div className="grid grid-cols-3 gap-[25px]">
+          <div className="grid grid-cols-3 gap-[25px] ">
             {ProductData.map((item) => (
               <ProductCart
                 key={item.id}

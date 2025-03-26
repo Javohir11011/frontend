@@ -57,7 +57,7 @@ const Shop = () => {
               ground.
             </p>
 
-            <h3 className="text-[15px]">Size:</h3>
+            <h3 className="text-[15px] pb-[15px]">Size:</h3>
             <div className="flex gap-4 pb-[20px]">
               <button className="rounded-3xl text-[#727272] p-[10px] border border-green-500">
                 S
