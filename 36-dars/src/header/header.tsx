@@ -3,6 +3,7 @@ import logo from "../app/assets/header/logo.svg";
 import search from "../app/assets/header/search.svg";
 import savat from "../app/assets/header/savat.svg";
 import login from "../app/assets/header/login.svg";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -12,8 +13,12 @@ export const Header = () => {
           <img src={logo.src} alt="img" />
         </div>
         <ul className="flex gap-[50px] text-[16px]">
-          <li>Home </li>
-          <li>Shop</li>
+          <Link href={"/"}>
+            <li>Home </li>
+          </Link>
+          <Link href={"/shop"}>
+            <li>Shop</li>
+          </Link>
           <li>Plant Care</li>
           <li>Blogs</li>
         </ul>
