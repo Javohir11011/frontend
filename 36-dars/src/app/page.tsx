@@ -1,11 +1,18 @@
+// "use client";
+
 import { ProductData } from "@/data/product-data";
 import logo from "../app/assets/home/logo.svg";
 import ProductCart from "./_components/product-cart";
-import logo2 from "../app/assets/home/logo2.svg";
 import logo3 from "../app/assets/home/logo3.svg";
 import logo4 from "../app/assets/home/logo4.svg";
+import ProductWrapper from "./_components/products";
+// import { GetCategoriesQuery } from "./service/getAllCategories";
+// import Filter from "./_components/filter";
 
 export default function Home() {
+  // const { data, isLoading } = GetCategoriesQuery();
+  // console.log(data);
+
   return (
     <div className="container">
       <div className="flex pt-[62px] pl-[25px] pr-[25px] gap-[123px] bg-[#fbfbfb] pb-[40px]">
@@ -26,78 +33,7 @@ export default function Home() {
         <img src={logo.src} alt="img" />
       </div>
 
-      <div className="pt-[50px] flex gap-[50px]">
-        <div className="bg-[#fbfbfb] pl-[24px] pr-[18px]">
-          <h3 className="text-[18px] text-[#3d3d3d] pt-[10px]">Categories</h3>
-          <div className="flex justify-between">
-            <ul>
-              <li className="text-[15px] pt-[12px] pb-[12px]">House</li>
-              <li className="text-[15px] pb-[12px]">Potter Plants</li>
-              <li className="text-[15px] pb-[12px]">Seeds</li>
-              <li className="text-[15px] pb-[12px]">Small Plants</li>
-              <li className="text-[15px] pb-[12px]">Plants</li>
-              <li className="text-[15px] pb-[12px]">Big Plants</li>
-              <li className="text-[15px] pb-[12px]">Succulents</li>
-              <li className="text-[15px] pb-[12px]">Gardening</li>
-              <li className="text-[15px] pb-[12px]">Accessories</li>
-            </ul>
-            <ul>
-              <li className="text-[15px] pt-[12px] pb-[12px]">33</li>
-              <li className="text-[15px] pb-[12px]">12</li>
-              <li className="text-[15px] pb-[12px]">65</li>
-              <li className="text-[15px] pb-[12px]">39</li>
-              <li className="text-[15px] pb-[12px]">23</li>
-              <li className="text-[15px] pb-[12px]">17</li>
-              <li className="text-[15px] pb-[12px]">19</li>
-              <li className="text-[15px] pb-[12px]">13</li>
-              <li className="text-[15px] pb-[12px]">18</li>
-            </ul>
-          </div>
-          <h3 className="pb-[16px] pt-[15px] text-[18px]">Price Range</h3>
-          <div>
-            <p className="text-[15px] pb-[16px]">
-              Price: <span className="text-[#46a358] ">$39 - $1230</span>
-            </p>
-            <button className="pt-[9px] pb-[9px] pr-[25px] pl-[25px] text-white bg-[#46a358] rounded-[6px]">
-              Filter
-            </button>
-          </div>
-          <h3 className="pb-[16px] pt-[46px] text-[18px]">Size</h3>
-          <div className="flex justify-between">
-            <ul>
-              <li className="text-[15px] pb-[12px]">Succulents</li>
-              <li className="text-[15px] pb-[12px]">Gardening</li>
-              <li className="text-[15px] pb-[12px]">Accessories</li>
-            </ul>
-            <ul>
-              <li className="text-[15px] pb-[12px]">12</li>
-              <li className="text-[15px] pb-[12px]">65</li>
-              <li className="text-[15px] pb-[12px]">39</li>
-            </ul>
-          </div>
-          <img src={logo2.src} alt="img" className="pt-[20px]" />
-        </div>
-        <div>
-          <div className="flex justify-between items-center pb-[20px]">
-            <div className="flex gap-[40px] text-[15px]">
-              <p>All Plants</p>
-              <p>New Arrivals</p>
-              <p>Sale</p>
-            </div>
-            <p>Short by: Default sorting</p>
-          </div>
-          <div className="grid grid-cols-3 gap-[25px]">
-            {ProductData.map((item) => (
-              <ProductCart
-                key={item.id}
-                img={item.img}
-                info={item.info}
-                price={item.price}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      <ProductWrapper />
       <div className="flex">
         <div className="flex pt-[100px] pl-[25px] pr-[25px] pb-[100px]">
           <div className="flex">

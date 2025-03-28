@@ -1,41 +1,49 @@
+"use client";
 import React from "react";
-import product1 from "../assets/shop/product1.svg";
-import product2 from "../assets/shop/product2.svg";
-import product3 from "../assets/shop/product3.svg";
-import product4 from "../assets/shop/product4.svg";
-import product5 from "../assets/shop/product5.svg";
-import logo from "../assets/shop/logo.svg";
-import logo2 from "../assets/shop/logo2.svg";
+import getByIdProduct from "../service/getByIdProduct";
 
-const Shop = () => {
+export interface ProductInner {
+  description: string;
+  id: string;
+  picture: string;
+  price: string;
+  size: string;
+  summary: string;
+  tags: string;
+  title: string;
+  type: string;
+}
+const ProductInner = ({ id }: { id: string }) => {
+  const { data, isLoading } = getByIdProduct(id);
+
   return (
     <div className="container">
       <div className="flex pt-[100px] pb-[100px]">
         <div className="flex gap-[39px]">
           <div className="">
             <img
-              src={product1.src}
+              src={data.src}
               alt="product1"
               className="p-[15px] bg-[#fbfbfb]"
             />
             <img
-              src={product2.src}
+              src={picture.src}
               alt="product2"
               className="p-[15px] bg-[#fbfbfb]"
             />
             <img
-              src={product3.src}
+              src={picture.src}
               alt="product3"
               className="p-[15px] bg-[#fbfbfb]"
             />
             <img
-              src={product4.src}
+              src={picture.src}
               alt="product4"
               className="p-[15px] bg-[#fbfbfb]"
             />
           </div>
           <img
-            src={product5.src}
+            src={picture.src}
             alt="product5"
             className="p-[20px] bg-[#fbfbfb] rounded-[2px]"
           />
@@ -57,7 +65,7 @@ const Shop = () => {
               ground.
             </p>
 
-            <h3 className="text-[15px]">Size:</h3>
+            <h3 className="text-[15px] pb-[15px]">Size:</h3>
             <div className="flex gap-4 pb-[20px]">
               <button className="rounded-3xl text-[#727272] p-[10px] border border-green-500">
                 S
@@ -101,4 +109,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default ProductInner;

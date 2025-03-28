@@ -16,9 +16,7 @@ export const Header = () => {
           <Link href={"/"}>
             <li>Home </li>
           </Link>
-          <Link href={"/shop"}>
-            <li>Shop</li>
-          </Link>
+          <li>Shop</li>
           <li>Plant Care</li>
           <li>Blogs</li>
         </ul>
