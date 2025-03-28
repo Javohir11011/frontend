@@ -1,17 +1,17 @@
-"use client";
+import { Category } from "@/types/category";
 import { useQuery } from "@tanstack/react-query";
-import { request } from "http";
 
-export const GetCategoriesQuery = () => {
-  return useQuery({
+export const getCategoryFetch = async (): Promise<Category[]> => {
+  const response = await fetch("http://13.233.2.40:3133/api/v1/category");
+  const data = await response.json();
+  return data.data;
+};
+const getCategories = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { data, isLoading } = useQuery({
     queryKey: ["categories"],
-    queryFn: GetCategories,
+    queryFn: getCategoryFetch,
   });
+  return { data, isLoading };
 };
-
-export const GetCategories = async () => {
-  const res = await fetch("http://localhost:4000/category");
-  const data = await res.json();
-
-  return data;
-};
+export default getCategories;
